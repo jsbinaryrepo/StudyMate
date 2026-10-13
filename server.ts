@@ -373,11 +373,14 @@ async function startServer() {
       appType: 'spa',
     });
     app.use(vite.middlewares);
-  } else {
-    app.use(express.static(path.resolve(__dirname, 'dist')));
+ 
+} else {
+    const staticPath = path.resolve(__dirname, 'src/main/resources/static');
+    app.use(express.static(staticPath));
     app.get('*', (_req: Request, res: Response) => {
-      res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+      res.sendFile(path.join(staticPath, 'index.html'));
     });
+
   }
 
   app.listen(PORT, () => {
