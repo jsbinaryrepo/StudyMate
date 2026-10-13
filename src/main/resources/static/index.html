@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMate AI — Study Smarter. Practice Better. Know When You're Ready.</title>
+  <meta name="description" content="Personalized AI learning and exam preparation platform for college students. Upload materials from your laptop, track recurring mistakes, simulate exams, and calculate readiness.">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/exam-mode.css">
+</head>
+<body>
+
+  <div id="app-container">
+    <!-- Main Left Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand" data-route="dashboard" style="cursor:pointer;">
+        <div class="brand-icon">🎓</div>
+        <div>
+          <div class="brand-name">StudyMate AI</div>
+          <span class="brand-tag">Academic Edition</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item active" data-route="dashboard">
+          <span class="icon">🏠</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-item" data-route="subjects">
+          <span class="icon">📚</span>
+          <span>Subjects</span>
+        </a>
+        <a class="nav-item" data-route="materials">
+          <span class="icon">📄</span>
+          <span>Study Materials</span>
+          <span class="nav-badge" style="background:var(--accent);">Upload</span>
+        </a>
+        <a class="nav-item" data-route="ask-notes">
+          <span class="icon">🤖</span>
+          <span>Ask My Notes</span>
+        </a>
+
+        <div class="nav-section-title">AI Study Tools</div>
+        <a class="nav-item" data-route="summary">
+          <span class="icon">⚡</span>
+          <span>Smart Summary</span>
+        </a>
+        <a class="nav-item" data-route="priority">
+          <span class="icon">🎯</span>
+          <span>Exam Priority</span>
+          <span class="nav-badge">High</span>
+        </a>
+        <a class="nav-item" data-route="flashcards">
+          <span class="icon">🧠</span>
+          <span>Flashcards Drill</span>
+        </a>
+        <a class="nav-item" data-route="answer-generator">
+          <span class="icon">✍️</span>
+          <span>10-Mark Answer Gen</span>
+        </a>
+        <a class="nav-item" data-route="image-solver">
+          <span class="icon">📷</span>
+          <span>Image Question Solver</span>
+        </a>
+        <a class="nav-item" data-route="coding-assistant">
+          <span class="icon">💻</span>
+          <span>Coding Assistant</span>
+        </a>
+        <a class="nav-item" data-route="voice-assistant">
+          <span class="icon">🎙️</span>
+          <span>Voice Study</span>
+        </a>
+
+        <div class="nav-section-title">Practice & Exam</div>
+        <a class="nav-item" data-route="quiz">
+          <span class="icon">📝</span>
+          <span>Interactive Quiz</span>
+        </a>
+        <a class="nav-item" data-route="exam-simulator">
+          <span class="icon">⭐</span>
+          <span>Exam Simulator</span>
+          <span class="nav-badge" style="background:var(--success);">Novelty</span>
+        </a>
+        <a class="nav-item" data-route="mistakes">
+          <span class="icon">⚠️</span>
+          <span>Mistake Memory</span>
+          <span class="nav-badge">4</span>
+        </a>
+        <a class="nav-item" data-route="revision">
+          <span class="icon">🔄</span>
+          <span>Smart Revision</span>
+        </a>
+        <a class="nav-item" data-route="planner">
+          <span class="icon">📅</span>
+          <span>Study Planner</span>
+        </a>
+
+        <div class="nav-section-title">Insights & System</div>
+        <a class="nav-item" data-route="analytics">
+          <span class="icon">📊</span>
+          <span>Analytics</span>
+        </a>
+        <a class="nav-item" data-route="profile">
+          <span class="icon">👤</span>
+          <span>Profile & XP</span>
+        </a>
+        <a class="nav-item" data-route="settings">
+          <span class="icon">⚙️</span>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar">N</div>
+        <div class="user-info">
+          <div class="user-name">Nivish</div>
+          <div class="user-role">Computer Science (Sem 5)</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main View Workspace -->
+    <div class="main-wrapper">
+      <!-- Top Application Header -->
+      <header class="top-header" id="top-header">
+        <div class="header-left">
+          <span class="header-title">🎓 StudyMate AI</span>
+        </div>
+
+        <div class="header-right">
+          <div class="streak-pill">
+            <span>🔥</span>
+            <span id="header-streak-count">7 Days</span>
+          </div>
+
+          <div class="xp-pill">
+            <span>⭐</span>
+            <span id="header-xp-count">1420 XP</span>
+          </div>
+
+          <button class="btn-icon" id="theme-toggle-btn" title="Toggle Light/Dark Theme" onclick="StudyMateApp.toggleTheme()">
+            🌙
+          </button>
+        </div>
+      </header>
+
+      <!-- Viewport Mounting Container -->
+      <main id="view-container">
+        <!-- Views are rendered dynamically by app.js -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div id="toast-container"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/demo-data.js"></script>
+  <script src="js/file-uploader.js"></script>
+  <script src="js/exam-simulator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
